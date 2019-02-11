@@ -44,9 +44,16 @@ bot.on('message', function(user, userID, channelID, message, evt){
 				break;
 			case 'fry':
 				bot.sendMessage({
-					to: channelID	.
+					to: channelID,
 					message: 'NOOOO!'
-				})
+				});
+				break;
+			default:
+				bot.sendMessage({
+					to: channelID,
+					message: 'Wekwek didn\'t understand'
+				});
+
 			//add more commands
 		}
 	}
