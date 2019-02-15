@@ -8,7 +8,7 @@ try {
 }
 
 var logger = require('winston');
-var auth = require('./auth.json');
+var auth = require('./config.json');
 var command = require('./command.js');
 var state = require('./botState.js');
 
