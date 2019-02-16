@@ -25,12 +25,13 @@ command['help'] = new Command('help', "Lists all commands",
 
 command['censor'] = new Command('censor', "Toggles server censorship",
 	function(client, user, userID, channelID, args, state){
-		var before = state['censor'];
-		state['censor'] = !state['censor']; 
+		var toggle = state['censor'].getVal();
+		console.log(toggle);
+		state['censor'].setVal(!toggle); 
 		client.sendMessage({
 			to: channelID,
 			message: "Censorship has been turned " 
-				+ (state['censor'] ?  "ON" : "OFF") + "."
+				+ (state['censor'].getVal() ?  "ON" : "OFF") + "."
 		});
 	}
 );
