@@ -7,10 +7,12 @@ try {
     process.exit();
 }
 
-var logger = require('winston');
 var auth = require('./config.json');
 var command = require('./command.js');
 var state = require('./botState.js');
+var logger = require('winston');
+
+global.utils = require('./utils.js');
 
 //Configure logger settings
 logger.remove(logger.transports.Console);
@@ -56,7 +58,7 @@ client.on('message', function(user, userID, channelID, message, evt){
 			}
 		}
 
-		if(state['censor'] == true){
+		if(state['censor'].getVal() == true){
 			//censor stuff
 		}		
 	}
